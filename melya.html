@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universitas negeri semarang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 600px;
+        }
+        .start-btn, .next-btn, .wait-btn {
+            background-color: #FCDA04;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+        .start-btn:hover, .next-btn:hover, .wait-btn:hover {
+            background-color: #f9a825;
+        }
+        .hidden {
+            display: none;
+        }
+        #welcomePage {
+            background: url('bg unes-01.png') no-repeat top center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="welcomePage">
+        <div class="card">
+            <h1>Selamat Datang UNNES!</h1>
+            <p>Cek kuota penerimaan Mahasiswa baru tahun 2025 jalur SNBT/UTBK</p>
+            <button class="start-btn" onclick="goToNextPage('secondPage')">Cek disini</button>
+        </div>
+    </div>
+    <div class="hidden container" id="secondPage">
+        <div class="card">
+            <h1>PILIH SERVER</h1>
+            <p>UNIVERSITAS NEGERI SEMARANG</p>
+            <button class="next-btn" onclick="goToNextPage('birthdayPage')">Server 1</button>
+            <button class="wait-btn" onclick="stayOnPage()">Server 2</button>
+        </div>
+    </div>
+    <div class="hidden container" id="birthdayPage">
+        <div class="decorations">🎉🎂🎈🎊🎁🎶</div>
+        <div class="sparkles">✨✨✨</div>
+        <img src="DITA.jpg" alt="Ucapan Ulang Tahun">
+        <div class="card">
+            <div class="balloons">🎈🎈🎈🎈🎈🎈🎈</div>
+            <h1>Selamat Ulang Tahun, Dita Meliya! 🎉🎂</h1>
+            <p>Semoga di hari spesial ini, segala harapan dan impianmu menjadi kenyataan.
+                Tahun baru dalam hidupmu membawa kebahagiaan, kesehatan, dan keberkahan yang melimpah.
+                Tetaplah menjadi pribadi yang ceria, kuat, dan penuh semangat dalam meraih cita-cita.</p>
+            <p>Nikmati hari istimewamu dengan senyuman dan kebahagiaan!💖</p>
+        </div>
+    </div>
+    <script>
+        function goToNextPage(nextPageId) {
+            document.querySelectorAll('.container').forEach(page => page.classList.add('hidden'));
+            document.getElementById(nextPageId).classList.remove('hidden');
+        }
+        function stayOnPage() {
+            alert("CARI APA MELLLL😊");
+        }
+    </script>
+</body>
+</html>
